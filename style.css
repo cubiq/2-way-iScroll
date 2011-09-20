@@ -24,7 +24,7 @@ header {
 	text-align:center;
 }
 
-#pagewrapper {
+#wrapper {
 	position:absolute;
 	z-index:1;
 	top:60px; bottom:0;
@@ -33,23 +33,29 @@ header {
 	overflow:hidden;
 }
 
-#pageflip {
+#slider {
+	position:relative;
+	z-index:1;
 	float:left;
-	width:3072px; height:100%;
+	width:3072px;
+	height:100%;
+	font-size:2em;
+	-webkit-transform:translate3d(0,0,0);
 }
 
-.scrollerwrapper {
-	position:relative; z-index:2;
-	display:block; float:left;
-	width:768px; height:100%;
-	font-size:2em;
+.page {
+	-webkit-box-sizing:border-box;
+	position:relative;
+	z-index:2;
+	display:block;
+	float:left;
+	width:768px;
 	background:#fff;
-	overflow:hidden;
+	padding:1em;
+	-webkit-transform:translate3d(0,0,0);
 }
 
 .scroller {
-	padding:1em;
-	-webkit-transform:translate3d(0,0,0);
 /*	display:block; float:left;
 	width:100%;*/
 }
@@ -57,11 +63,11 @@ header {
 p { margin-bottom:1.2em; }
 
 @media only screen and (orientation: landscape) {
-	#pagewrapper {
+	#wrapper {
 		width:1024px !important;
 	}
 
-	#pageflip {
+	#slider {
 		width:4096px !important;
 	}
 	
