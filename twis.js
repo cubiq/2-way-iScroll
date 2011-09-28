@@ -52,11 +52,11 @@ var m = Math,
 
 		that.wrapper = doc.querySelector(wrapper);
 		that.wrapper.style.overflow = 'hidden';
-		that.slider = doc.querySelector(wrapper + ' > div');
-		that.pages = doc.querySelectorAll(wrapper + ' > div > div');
 
 		// Default options
 		that.options = {
+			slider: wrapper + ' > div',
+			pages: wrapper + ' > div > div',
 			hScroll: true,
 			vScroll: true,
 			x: 0,
@@ -82,6 +82,9 @@ var m = Math,
 
 		// User defined options
 		for (i in options) that.options[i] = options[i];
+
+		that.slider = doc.querySelector(that.options.slider);
+		that.pages = doc.querySelectorAll(that.options.pages);
 
 		// Set starting position
 		that.x = that.options.x;
