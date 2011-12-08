@@ -576,6 +576,24 @@ TWIS.prototype = {
 
 		that._resetPos(200);
 	},
+	
+	scrollToPage: function (page, time) {
+		time = time || 0;
+		if (page < 0) page = 0;
+		else if (page > this.pages.length-1) page = this.pages.length-1;
+
+		this.changeTarget(this.pages[page]);
+
+		this.scrollTo(-page*this.pageWidth, this.y, time);
+	},
+	
+	scrollY: function (pos, time) {
+		time = time || 0;
+		if (pos > 0) pos = 0;
+		else if (pos < this.maxScrollY) pos = this.maxScrollY;
+
+		this.scrollTo(this.x, pos, time);
+	},
 
 	scrollTo: function (x, y, time, relative) {
 		var that = this,

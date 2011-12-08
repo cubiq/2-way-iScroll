@@ -16,6 +16,17 @@ var myScroll;
 function loaded() {
 	myScroll = new TWIS('#wrapper');
 
+/*
+	// Test scrollY and scrollToPage
+	setTimeout(function () {
+		myScroll.scrollToPage(3, 500);
+	}, 1000);
+
+	setTimeout(function () {
+		myScroll.scrollY(-1000, 1500);
+	}, 2000);
+*/
+
 	// Free some mem
 	window.removeEventListener('load', loaded, false);
 }
